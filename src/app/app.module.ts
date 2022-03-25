@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Prova } from './prova/prova.component';
@@ -10,8 +9,6 @@ import { AssignmentsComponent } from './components/navbar/assignments/assignment
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/navbar/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import { AlertSuccessComponent } from './shared/components/alert-success/alert-success.component';
-import { AlertDangerComponent } from './shared/components/alert-danger/alert-danger.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
 
 @NgModule({
@@ -23,8 +20,6 @@ import { AlertComponent } from './shared/components/alert/alert.component';
      GamersComponent,
      AssignmentsComponent,
      NotfoundComponent,
-     AlertSuccessComponent,
-     AlertDangerComponent,
      AlertComponent
   ],
   imports: [

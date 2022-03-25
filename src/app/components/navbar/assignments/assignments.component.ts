@@ -6,11 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./assignments.component.scss']
 })
 export class AssignmentsComponent implements OnInit {
-  
-
+  text = '';
+  text2 = '';
+  users:string[] = [];
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+
+  getText()  {
+    return this.text;
+  }
+
+  aggiungi () {
+   this.users.push(this.text);
+   console.log(this.users.length);
+   this.text = "";
+  }
+
+  reset() {
+    this.text = '';
+    this.users.length = 0;
   }
 
 }

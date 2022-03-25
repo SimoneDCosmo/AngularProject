@@ -1,5 +1,44 @@
+
+<!-- <input type
+type = "text"
+> 
+</input> -->
+<div id="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="text">            
+              </div>
+        </div>
+    <div class="col-2">
+    <button type="button" class="btn btn-primary" [disabled]= "!text" (click) = "reset()">Reset</button>
+</div>
+<div class="col-2">
+    <button type="button" class="btn btn-primary" [disabled]= "!text" (click) = "aggiungi()">Aggiungi alla lista</button>
+</div>
+</div>
+<div class="row">
+    <div class="col">
+        <p align = "left">Testo: <b>{{getText()}}</b></p>
+        <hr>
+        <p align = "left"
+        *ngFor = "let user of users"
+        >User: <b>{{user}}</b></p>
+        <br>
+            <ol>
+            <li>Aggiungi una input field che effettua l'update di una property (attraverso il two way-Binding)</li>
+            <li>Mostra in output la property username attraverso la tecnica della interpolazione di stringhe</li>
+            <li>Aggiungi un pulsante che dia la possibilità di resettare il campo di input (deve essere cliccabile SOLO se la input è valorizzata)</li>
+            <li>Aggiungi un pulsante che dia la possibilità di aggiungere il valore dell'input field ad un array di stringhe contenenti tutti gli username inseriti</li>
+            <li>Mostra la lista degli username in una listGroup (bootstrap)</li>
+            </ol>
+    </div>
+</div>
+
+
+<br><br><br><br><br><br>
 <app-alert
-    description="",
-    
->
+    [description]="'Warning'"
+    [classColor] = "'alert-danger'">
 </app-alert>
+</div>
