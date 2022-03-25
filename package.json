@@ -1,6 +1,6 @@
 {
   "name": "new-angular-project2",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
