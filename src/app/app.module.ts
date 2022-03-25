@@ -12,6 +12,7 @@ import { HomeComponent } from './components/navbar/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AlertSuccessComponent } from './shared/components/alert-success/alert-success.component';
 import { AlertDangerComponent } from './shared/components/alert-danger/alert-danger.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AlertDangerComponent } from './shared/components/alert-danger/alert-dan
      AssignmentsComponent,
      NotfoundComponent,
      AlertSuccessComponent,
-     AlertDangerComponent
+     AlertDangerComponent,
+     AlertComponent
   ],
   imports: [
     BrowserModule,
