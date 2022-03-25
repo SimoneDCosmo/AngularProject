@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'new_angular_project2';
-}
+  title = 'Sono Antonio';
+  allowPropertyBinding= true;
+
+  constructor(){
+    setTimeout(()=>{
+      this.title ='Abilitato';
+      }, 2000)
+    }
+
+    disableButton(){
+      this.allowPropertyBinding=false;
+    }
+  
+    ngOnInit():void{
+      setTimeout(()=>{
+      this.title ='Non sono Antonio';
+      }, 5000)
+    }
+  }
+
