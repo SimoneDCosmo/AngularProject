@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/navbar/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
+import { CardComponent } from './shared/components/card/card.component';
+import { TictactoeComponent } from './components/navbar/assignments/tictactoe/tictactoe.component';
+import { CellComponent } from './components/navbar/assignments/tictactoe/cell/cell.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { AlertComponent } from './shared/components/alert/alert.component';
      GamersComponent,
      AssignmentsComponent,
      NotfoundComponent,
-     AlertComponent
+     AlertComponent,
+     CardComponent,
+     TictactoeComponent,
+     CellComponent
   ],
   imports: [
     BrowserModule,

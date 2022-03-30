@@ -13,7 +13,7 @@ type = "text"
     <div class="col-2">
     <button type="button" class="btn btn-primary" [disabled]= "!text" (click) = "reset()">Reset</button>
 </div>
-<div class="col-2">
+<div class="col-2" >
     <button type="button" class="btn btn-primary" [disabled]= "!text" (click) = "aggiungi()">Aggiungi alla lista</button>
 </div>
 </div>
@@ -21,11 +21,15 @@ type = "text"
     <div class="col">
         <p align = "left">Testo: <b>{{getText()}}</b></p>
         <hr>
+        <p align = "left">Array: <b>{{users | json}}</b></p>
+        <hr>
         <p align = "left"
         *ngFor = "let user of users"
-        >User: <b>{{user}}</b></p>
+        >Users: <b>{{user}}</b></p>
+        
+        <hr>
         <br>
-            <ol>
+            <ol class = "list-group">
             <li>Aggiungi una input field che effettua l'update di una property (attraverso il two way-Binding)</li>
             <li>Mostra in output la property username attraverso la tecnica della interpolazione di stringhe</li>
             <li>Aggiungi un pulsante che dia la possibilità di resettare il campo di input (deve essere cliccabile SOLO se la input è valorizzata)</li>
@@ -36,9 +40,14 @@ type = "text"
 </div>
 
 
-<br><br><br><br><br><br>
+<br><br><br>
 <app-alert
     [description]="'Warning'"
     [classColor] = "'alert-danger'">
 </app-alert>
 </div>
+<br><br><hr>
+
+<app-tictactoe></app-tictactoe>
+
+<br><br><hr>

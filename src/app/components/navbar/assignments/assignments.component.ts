@@ -9,11 +9,9 @@ export class AssignmentsComponent implements OnInit {
   text = '';
   text2 = '';
   users:string[] = [];
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   getText()  {
     return this.text;
@@ -22,11 +20,15 @@ export class AssignmentsComponent implements OnInit {
   aggiungi () {
    this.users.push(this.text);
    console.log(this.users.length);
-   this.text = "";
+   this.resetInput();
+  }
+
+  resetInput() {
+    this.text = '';
   }
 
   reset() {
-    this.text = '';
+    this.resetInput();
     this.users.length = 0;
   }
 

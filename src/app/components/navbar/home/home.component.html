@@ -1,7 +1,7 @@
-
-<input 
-type="text"
-[(ngModel)]="title"
->
-
-<p>Questo è il {{getTitle()}}</p>
+<div class="container">
+<div class="row flex-wrap">
+<div class="col-3 mb-3" *ngFor="let card of GamesService.getList()">
+<app-card [cards]="card"></app-card>
+</div>
+</div>
+</div>

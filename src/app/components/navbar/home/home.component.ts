@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GamesService } from 'src/app/services/games.service';
+import { Game } from 'src/app/shared/components/card/interfaces/Card';
+
 
 @Component({
   selector: 'app-home',
@@ -8,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   title= '';
 
-  constructor() { }
+  constructor(public GamesService: GamesService) { }
 
   ngOnInit(): void {}
 

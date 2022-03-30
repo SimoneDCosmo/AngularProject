@@ -1,0 +1,8 @@
+<br><br>
+<div class="container-fluid ">
+    <div class="row justify-content-center" *ngFor = "let row of board; let x = index">
+        <div class="col-4 text-center align-items-center  justify-content-center  m-1 d-flex  " *ngFor = "let cell of row ; let y = index" style= "border: 2px solid blue; width: 100px; height: 100px;">
+            <app-cell [status]="cell" (click)="onCellClick(x, y)"></app-cell>
+        </div>
+    </div>
+</div>
