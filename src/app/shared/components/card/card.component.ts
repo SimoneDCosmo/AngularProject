@@ -17,7 +17,6 @@ export class CardComponent implements OnInit{
   }
 
   openGameDetails (id: string) {
-      alert("ciao");
       this.router.navigate(['details', id]);
   }
 

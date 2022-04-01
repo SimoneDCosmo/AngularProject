@@ -4,4 +4,5 @@ export interface Game {
     background_image: string;
     released: string;
     platforms: [];
+    saturated_color: string;
 }
