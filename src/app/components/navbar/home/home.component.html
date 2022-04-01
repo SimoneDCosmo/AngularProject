@@ -12,12 +12,12 @@
         </div>
     </div><br>
 <div class="row flex-wrap">
-<div class="col-3 mb-3" *ngFor="let card of games">
+<div class=" col-md-3 mb-3" *ngFor="let card of games">
 <app-card [game]="card"></app-card>
 </div>
 </div>
 <nav aria-label="...">
-    <ul class="pagination">
+    <ul class="pagination justify-content-center">
       <li class="page-item avanti" [class.disabled]="currentPage <= 1">
         <a class="page-link" (click)="onPrev()" tabindex="-1"  >Previous</a>
       </li>
