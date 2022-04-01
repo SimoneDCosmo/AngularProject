@@ -1,4 +1,22 @@
-<div *ngIf="game$ | async as game">
-    {{game | json}}
-    {{game.released | date: 'MMM YYYY'}}
-</div>
+ <div *ngIf="game$ | async as game">
+        
+            
+            <h1>{{game.name}}</h1><p>Released on <b>{{game.released | date: 'MMM YYYY'}}</b></p>
+                <div class="row">
+                <img src="" alt="" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>

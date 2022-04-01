@@ -3,10 +3,11 @@
         <div class="col-md-3 col-xs-6">
            <select class = "form-select" (change)="onSelectChange($event)">
                <option selected>Ordina per</option>
-               <option>Nome</option>
-               <option>Data di rilascio</option>
-               <option>Data di aggiunta</option>
-               <option>Rating</option>
+               <option value="name">Nome</option>
+               <option value="released">Data di rilascio</option>
+               <option value="added">Data di aggiunta</option>
+               <option value="rating">Rating</option>
+               <option value="metacrit">Popolarità</option>
            </select> 
         </div>
     </div><br>
@@ -15,4 +16,14 @@
 <app-card [game]="card"></app-card>
 </div>
 </div>
+<nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item avanti" [class.disabled]="currentPage <= 1">
+        <a class="page-link" (click)="onPrev()" tabindex="-1"  >Previous</a>
+      </li>
+      <li class="page-item avanti">
+        <a class="page-link" (click)="onNext()" >Next</a>
+      </li>
+    </ul>
+  </nav>
 </div>

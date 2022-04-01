@@ -6,6 +6,8 @@ import { environment } from 'src/environments/environment';
 import { APIResponse } from '../models/apiResponse';
 import { Game } from '../shared/components/card/interfaces/Game';
 
+export const GAME_FOR_PAGE = 12;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,12 +17,13 @@ export class GamesService {
 
    }
 
-  getList2(ordering: string, search?: string): Observable<APIResponse<Game>> { //array da un db
-    let params = new HttpParams().set('ordering', ordering);
+  getList2(page: number,ordering: string, search?: string): Observable<APIResponse<Game>> { //array da un db
+    let params = new HttpParams().set('ordering', ordering).set('page',page).set('page_size', GAME_FOR_PAGE);
 
     if (search)
     {
-      params = new HttpParams().set('ordering', ordering).set('search', search);
+      params = new HttpParams().set('ordering', ordering).set('search', search).set('page', page).set('page_size', GAME_FOR_PAGE);
+      
     }
 
     return this.http.get<APIResponse<Game>>(`${environment.BASE_URL}/games`, {
