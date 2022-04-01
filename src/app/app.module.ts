@@ -13,6 +13,9 @@ import { AlertComponent } from './shared/components/alert/alert.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { TictactoeComponent } from './components/navbar/assignments/tictactoe/tictactoe.component';
 import { CellComponent } from './components/navbar/assignments/tictactoe/cell/cell.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GamesInterceptor } from './interceptors/games.interceptor';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +29,23 @@ import { CellComponent } from './components/navbar/assignments/tictactoe/cell/ce
      AlertComponent,
      CardComponent,
      TictactoeComponent,
-     CellComponent
+     CellComponent,
+     DetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GamesInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

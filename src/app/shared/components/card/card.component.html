@@ -1,12 +1,15 @@
-<div class="card-group" >
-<div class="card" >
-    <img src=" {{cards.img}} " class="card-img-top" alt="...">
+<div class="card-group" (click)="openGameDetails(game.id)" >
+<div class="card mx-auto my-3 bg-dark game"  >
+    <img 
+    height="200px"
+    style="object-fit: cover;"
+    [src]="game.background_image" class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">  </h5>
-      <p class="card-text">{{cards.title}}</p>
+      <p class="card-text text-light" >{{game.name}}</p>
     </div>
     <div class="card-footer">
-      <small class="text-muted"> {{cards.releaseDate}} </small>
+      <small class="text-muted text-light"> {{game.released}} </small>
     </div>
   </div>
 </div>

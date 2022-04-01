@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Game } from './interfaces/Card';
-
+import { Game } from './interfaces/Game';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -9,11 +9,16 @@ import { Game } from './interfaces/Card';
 })
 export class CardComponent implements OnInit{
 
-  @Input() cards!: Game;
+  @Input() game !: Game;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  openGameDetails (id: string) {
+      alert("ciao");
+      this.router.navigate(['details', id]);
   }
 
 }

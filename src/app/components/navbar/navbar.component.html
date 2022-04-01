@@ -10,12 +10,16 @@
             <a class="nav-link " [routerLink]="['./home']" routerLinkActive="active">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['./game']" routerLinkActive="active">Games</a>
+            <a class="nav-link" [routerLink]="['./game']" routerLinkActive="active">Gamers</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['assignments']" routerLinkActive="active">Assignements</a>
           </li>
         </ul>
+        <form class="d-flex" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+          <input class="form-control me-2" type="search" name="search"  placeholder="Search" aria-label="Search" ngModel>
+          <button class="btn btn-outline-success" type="submit" >Search</button>
+        </form>
       </div>
     </div>
   </nav>

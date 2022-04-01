@@ -1,0 +1,4 @@
+<div *ngIf="game$ | async as game">
+    {{game | json}}
+    {{game.released | date: 'MMM YYYY'}}
+</div>

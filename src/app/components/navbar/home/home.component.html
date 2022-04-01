@@ -1,7 +1,18 @@
 <div class="container">
+    <div class="row">
+        <div class="col-md-3 col-xs-6">
+           <select class = "form-select" (change)="onSelectChange($event)">
+               <option selected>Ordina per</option>
+               <option>Nome</option>
+               <option>Data di rilascio</option>
+               <option>Data di aggiunta</option>
+               <option>Rating</option>
+           </select> 
+        </div>
+    </div><br>
 <div class="row flex-wrap">
-<div class="col-3 mb-3" *ngFor="let card of GamesService.getList()">
-<app-card [cards]="card"></app-card>
+<div class="col-3 mb-3" *ngFor="let card of games">
+<app-card [game]="card"></app-card>
 </div>
 </div>
 </div>

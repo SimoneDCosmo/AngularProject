@@ -11,6 +11,11 @@ const routes: Routes =
     path : 'home', component: HomeComponent,
   },
   {
+    path : 'search/:game-search',
+    component : HomeComponent,
+  },
+  { path: 'details', loadChildren: () => import('./components/details/details.module').then(m => m.DetailsModule) },
+  {
     path : 'game', component: GamersComponent,
   },
   {

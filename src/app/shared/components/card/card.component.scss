@@ -1,0 +1,11 @@
+.game {
+    width:  18rem;
+    border: none;
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+    
+        transform: translateY(-3px);
+    }
+}
