@@ -3,4 +3,5 @@ export interface Gamer {
     name: string;
     surname: string;
     description: string;
+    email: string;
 }

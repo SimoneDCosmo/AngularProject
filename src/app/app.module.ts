@@ -6,7 +6,7 @@ import { Prova } from './prova/prova.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GamersComponent } from './components/navbar/gamers/gamers.component';
 import { AssignmentsComponent } from './components/navbar/assignments/assignments.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/navbar/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
@@ -37,6 +37,7 @@ import { DetailsComponent } from './components/details/details.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
 
   ],
   providers: [

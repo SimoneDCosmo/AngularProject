@@ -2,15 +2,13 @@
  
   <div class="row">
     <div *ngIf="gamers$ | async as gamers" class="col-lg-6 offset-lg-3 mb-5">
-      <h5>Gamers: </h5>
+      <h5 *ngIf="gamers.length">Gamers: </h5>
       <div class="list-group">
-        <a *ngFor="let gamer of gamers"
+        <a *ngFor="let gamer of gamers" (click)="onSelectGamer(gamer)" [class.active] = "selectedId === gamer.id"
         class="list-group-item list-group-item-action" aria-current="true">
       <div class="d-flex w-100 justify-content-between">
-       <h5 class = "mb-1">  {{gamer.name}} {{gamer.surname}} </h5> 
+       <h5 class = "mb-1">{{gamer.name}} {{gamer.surname}} <br>Email: {{gamer.email}} </h5> 
        <button type="button" class="btn btn-danger text-light bi bi-trash" (click)="onDelete(gamer.id)"></button>
-
-
       </div>
       <p class="mb-1"> {{gamer.description}} </p>
       </a>
@@ -40,8 +38,29 @@
   </ul>
 </form>
 </div>
+
 <div class="col-md-6 col-xs-6" style="border: 1px solid black;">
-  form 2
-</div>
+  <form class="row g-3" [formGroup]="gamerReactiveForm" (ngSubmit)="onCreateGamerReactive()" >
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label text-left" >Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insert Name" formControlName="name"   >
+        <label for="exampleFormControlInput1" class="form-label">Surname</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insert Surname" formControlName="surname"  >
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Insert Email" formControlName="email"  >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Insert your description" formControlName="description"  ></textarea>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3" [disabled]="!gamerReactiveForm.valid" >Submit</button>
+      </div>
+    <p> {{gamerReactiveForm.status}} </p>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let gamer of gamers"> {{gamer.name }} {{gamer.surname}} </li>
+      </ul>
+    </form>
+    </div>
 </div>
 </div>
