@@ -20,7 +20,7 @@ export class GamerService {
         const gamerArray: Gamer[] = [];
         for (const key in resData){
           if (resData.hasOwnProperty(key)){ // controllo se l'id esiste ed è un oggeto di tipo Gamer
-            gamerArray.push({id: key, ...resData[key]}); // inserirsco oltre l'id tutti parametri di tipo Gamer
+            gamerArray.push({...resData[key], id: key,}); // inserirsco oltre l'id tutti parametri di tipo Gamer
           }
         }
         return of(gamerArray);
@@ -38,6 +38,15 @@ export class GamerService {
     gamer,{
       observe: 'response'
     }).pipe(take(1), switchMap(() => this.refresh()));
+  }
+
+  updateGamer(gamer: Gamer): Observable<Gamer[]> {
+    return this.http
+    .put(`${environment.FIREBASE_URL}/gamers/${gamer.id}.json`, gamer)
+    .pipe(
+      take(1),
+      switchMap(() => this.refresh())
+    )
   }
 
 

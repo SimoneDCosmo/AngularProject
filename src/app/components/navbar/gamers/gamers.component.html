@@ -7,9 +7,11 @@
         <a *ngFor="let gamer of gamers" (click)="onSelectGamer(gamer)" [class.active] = "selectedId === gamer.id"
         class="list-group-item list-group-item-action" aria-current="true">
       <div class="d-flex w-100 justify-content-between">
-       <h5 class = "mb-1">{{gamer.name}} {{gamer.surname}} <br>Email: {{gamer.email}} </h5> 
+       <h5 class = "mb-1">Name: {{gamer.name}}</h5> 
        <button type="button" class="btn btn-danger text-light bi bi-trash" (click)="onDelete(gamer.id)"></button>
       </div>
+      <h5 class = "mb-1" style="text-align: left;"><br>Surname: {{gamer.surname}}</h5>
+      <h5 class = "mb-1" style="text-align: left;"><br>Email: {{gamer.email}}</h5>
       <p class="mb-1"> {{gamer.description}} </p>
       </a>
       </div>
@@ -41,13 +43,14 @@
 
 <div class="col-md-6 col-xs-6" style="border: 1px solid black;">
   <form class="row g-3" [formGroup]="gamerReactiveForm" (ngSubmit)="onCreateGamerReactive()" >
+    <input type="hidden" id="gamerId" formControlName="id">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label text-left" >Name</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insert Name" formControlName="name"   >
         <label for="exampleFormControlInput1" class="form-label">Surname</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insert Surname" formControlName="surname"  >
         <label for="exampleFormControlInput1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Insert Email" formControlName="email"  >
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insert Email" formControlName="email"  >
       </div>
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Description</label>
